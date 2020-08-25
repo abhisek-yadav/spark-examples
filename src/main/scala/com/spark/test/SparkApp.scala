@@ -50,10 +50,10 @@ object SparkApp extends Serializable {
 
   def getSparkConf: SparkConf = {
 
-    var props = new Properties
+    val props = new Properties
     props.load(Source.fromFile("spark.conf", "UTF-8").bufferedReader)
 
-    var sparkConf = new SparkConf
+    val sparkConf = new SparkConf
     props.forEach(((k, v) => sparkConf.set(k.toString, v.toString)))
 
     sparkConf

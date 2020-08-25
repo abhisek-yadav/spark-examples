@@ -7,7 +7,8 @@ object CSVReaderApp {
 
   def main(args: Array[String]): Unit = {
 
-    val spark: SparkSession = SparkSession.builder().appName("CSVReaderApp")
+    val spark: SparkSession = SparkSession.builder()
+      .appName("CSVReaderApp")
       .master("local[*]")
       .getOrCreate()
 
